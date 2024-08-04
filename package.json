@@ -2,14 +2,21 @@
   "name": "chai-aur-backend",
   "version": "1.0.0",
   "description": "A backend journey begins from here very excited",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [
     "js",
     "backend"
   ],
   "author": "prashanth",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "touch": "^3.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
 }
