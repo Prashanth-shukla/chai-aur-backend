@@ -168,7 +168,7 @@ const registerUser = asyncHandler(async (req, res) => {
     // const avatarLocalPath = req.files?.avatar[0]?.path;
     // why optional channing is not working
 
-    //const avatarLocalPath = Array.isArray(req.files?.avatar) && req.files.avatar.length > 0 ? req.files.avatar[0].path : undefined;
+    const avatarLocalPath = Array.isArray(req.files?.avatar) && req.files.avatar.length > 0 ? req.files.avatar[0].path : undefined;
 
 
     // const coverImageLocalPath = req.files?.coverImage[0]?.path;
@@ -194,10 +194,12 @@ const registerUser = asyncHandler(async (req, res) => {
    //console.log("ps ",avatarLocalPath);
    
 
-    // if (!avatarLocalPath) {
-    //     throw new ApiError(400, "Avtar file is required")
-    // }
-
+     if (!avatarLocalPath) {
+        throw new ApiError(400, "Avtar file is required")
+     }
+     
+     console.log("avatarLocalpath:-",avatarLocalPath);
+     
     const avatar = await uploadOnCloudinary(avatarLocalPath)
     const coverImage = await uploadOnCloudinary(coverImageLocalPath)
     console.log("cloudinary response avtar", avatar);
