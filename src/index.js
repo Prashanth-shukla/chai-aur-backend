@@ -4,7 +4,7 @@ import { app } from './app.js';
 
 
 dotenv.config({ path: './.env' });
-
+// by config .env file it can be accessed by any where in file
 console.log('Cloudinary Config in index.js file:', {
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,

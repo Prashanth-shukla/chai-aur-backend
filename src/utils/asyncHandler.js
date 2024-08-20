@@ -3,6 +3,7 @@ const asyncHandler = (requestHandler) => {
        Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err))
    }
 }
+// Promise:Represents the completion of an asynchronous operation
 
 
 export {asyncHandler}
